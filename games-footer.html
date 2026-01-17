@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games Footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ffcc00;
+        }
+
+        /* Grid Footer */
+        .games-footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+            align-items: center;
+        }
+
+        .games-footer div {
+            background-color: #007bff;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .games-footer div:hover {
+            transform: translateY(-5px);
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="games-footer">
+        <div><a href="snakes.html">Play Snake Game 🐍</a></div>
+        <div><a href="fireworks.html">Fireworks Show 🎆</a></div>
+    </div>
+
+</body>
+</html>

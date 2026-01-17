@@ -5,6 +5,72 @@
     <title>Brent Gayamo | IT Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+/* Games Footer Grid */
+.games-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+/* Individual Game Frame */
+.game-frame {
+    background-color: #111;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Game Title */
+.game-frame h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* Iframe Styling */
+.game-frame iframe {
+    width: 100%;
+    height: 900px; /* tall enough to show entire game */
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    background-color: #000;
+}
+
+/* Hover Effect on Frame */
+.game-frame:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .game-frame iframe {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .games-footer {
+        grid-template-columns: 1fr;
+        padding: 20px 3%;
+    }
+
+    .game-frame iframe {
+        height: 50vh;
+    }
+
+    .game-frame h3 {
+        font-size: 1.1rem;
+    }
+}
+
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
@@ -204,6 +270,17 @@
 
     <!-- Footer -->
     <footer>
+<!-- Games Footer with Full-Website Iframes -->
+<section class="games-footer">
+    <div class="game-frame">
+        <h3>Snake Game 🐍</h3>
+        <iframe src="snake.html" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="game-frame">
+        <h3>Fireworks Show 🎆</h3>
+        <iframe src="fireworks.html" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
         <p>&copy; 2026 Your Name | All Rights Reserved</p>
         <p>
             <a href="https://github.com/username">GitHub</a> |
