@@ -4,194 +4,14 @@
     <meta charset="UTF-8">
     <title>Brent Gayamo | IT Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-/* Games Footer Grid */
-.games-footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    background-color: #222;
-    color: #fff;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-/* Individual Game Frame */
-.game-frame {
-    background-color: #111;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Game Title */
-.game-frame h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-/* Iframe Styling */
-.game-frame iframe {
-    width: 100%;
-    height: 900px; /* tall enough to show entire game */
-    border-radius: 8px;
-    border: 2px solid #007bff;
-    background-color: #000;
-}
-
-/* Hover Effect on Frame */
-.game-frame:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 900px) {
-    .game-frame iframe {
-        height: 60vh;
-    }
-}
-
-@media (max-width: 600px) {
-    .games-footer {
-        grid-template-columns: 1fr;
-        padding: 20px 3%;
-    }
-
-    .game-frame iframe {
-        height: 50vh;
-    }
-
-    .game-frame h3 {
-        font-size: 1.1rem;
-    }
-}
-
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: #222;
-            color: #fff;
-            padding: 20px 10%;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        /* Sections */
-        section {
-            padding: 50px 10%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #222;
-            border-bottom: 2px solid #007bff;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* Skills */
-        .skills ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills li {
-            display: inline-block;
-            margin: 5px 10px;
-            background: #007bff;
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Projects */
-        .projects .project {
-            background: #fff;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .projects .project h3 {
-            margin-top: 0;
-        }
-
-        /* Certifications & Activities */
-        .certifications ul,
-        .activities ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px 10%;
-        }
-
-        footer a {
-            color: #fff;
-            margin: 0 10px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Your Name</h1>
+        <h1>Brent Gayamo</h1>
         <p>IT Student | Aspiring Web Developer</p>
         <nav>
             <a href="#about">About</a>
@@ -199,6 +19,7 @@
             <a href="#projects">Projects</a>
             <a href="#certifications">Certifications</a>
             <a href="#activities">Activities</a>
+            <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -207,8 +28,15 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Write a brief professional narrative here. Include your career goals, strengths, and what makes you unique.  
-            Example: "I am an IT student passionate about web development, with experience in building interactive websites and small games. I enjoy solving complex problems and contributing to open-source projects."
+            I am an IT student passionate about web development and emerging technologies.  
+            My focus lies in building interactive, user-friendly websites and applications.  
+            I enjoy solving complex problems, optimizing code, and learning new frameworks.  
+            I am proactive, detail-oriented, and committed to delivering high-quality projects.  
+        </p>
+        <p>
+            Beyond development, I have experience in team collaboration, event coordination,  
+            and mentoring peers in coding clubs. My goal is to contribute to impactful projects  
+            that combine technology with innovation.
         </p>
     </section>
 
@@ -216,28 +44,55 @@
     <section id="skills" class="skills">
         <h2>Skills</h2>
         <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Git & GitHub</li>
-            <li>React</li>
-            <li>Node.js</li>
+            <li>HTML5 & Semantic Markup</li>
+            <li>CSS3 & Responsive Design</li>
+            <li>JavaScript & ES6+</li>
+            <li>Python (Data Analysis & Automation)</li>
+            <li>Git & GitHub Version Control</li>
+            <li>React.js & SPA Development</li>
+            <li>Node.js & Express Backend</li>
+            <li>SQL & MongoDB Databases</li>
+            <li>API Integration & RESTful Services</li>
+            <li>Unit Testing & Debugging</li>
         </ul>
+        <p style="margin-top:10px;color:#9ca3af;">Proficiency levels vary; I’m continuously improving my skills with hands-on projects.</p>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project">
-            <h3>Project 1: Portfolio Website</h3>
-            <p>Created a personal portfolio website using HTML, CSS, and JavaScript. Includes interactive elements and responsive design. <a href="https://github.com/username/portfolio">View on GitHub</a></p>
+            <h3>Portfolio Website</h3>
+            <p>
+                Developed a responsive personal portfolio website using HTML, CSS, and JavaScript.  
+                Features include dynamic project sections, smooth scrolling, and interactive animations.  
+                <a href="https://github.com/username/portfolio">View on GitHub</a>
+            </p>
         </div>
         <div class="project">
-            <h3>Project 2: Chat App</h3>
-            <p>Developed a real-time chat application using Node.js and Socket.io. Implemented user authentication and message storage. <a href="https://github.com/username/chat-app">View on GitHub</a></p>
+            <h3>Real-Time Chat App</h3>
+            <p>
+                Built a real-time chat application using Node.js, Socket.io, and Express.  
+                Includes authentication, message storage, and user-friendly interface.  
+                <a href="https://github.com/username/chat-app">View on GitHub</a>
+            </p>
         </div>
-        <!-- Add more projects here -->
+        <div class="project">
+            <h3>Task Manager Web App</h3>
+            <p>
+                Created a task management application with React.js and MongoDB.  
+                Supports task creation, editing, deletion, and real-time updates.  
+                <a href="https://github.com/username/task-manager">View on GitHub</a>
+            </p>
+        </div>
+        <div class="project">
+            <h3>Python Data Analysis Tool</h3>
+            <p>
+                Developed a Python script for analyzing CSV datasets.  
+                Generates visualizations and summaries to assist decision-making.  
+                <a href="https://github.com/username/data-analysis">View on GitHub</a>
+            </p>
+        </div>
     </section>
 
     <!-- Certifications Section -->
@@ -247,6 +102,9 @@
             <li>Google IT Support Professional Certificate</li>
             <li>Coursera: Web Development Bootcamp</li>
             <li>AWS Cloud Practitioner Certification</li>
+            <li>Microsoft Azure Fundamentals</li>
+            <li>FreeCodeCamp: Responsive Web Design</li>
+            <li>Introduction to Cybersecurity (Cisco Networking Academy)</li>
         </ul>
     </section>
 
@@ -254,37 +112,48 @@
     <section id="activities" class="activities">
         <h2>Extracurricular Activities</h2>
         <ul>
-            <li>Member of Coding Club – organized hackathons</li>
-            <li>Volunteered as IT Support for University Events</li>
-            <li>Participated in national programming competitions</li>
+            <li>Member of Coding Club – organized university hackathons and coding competitions</li>
+            <li>Volunteered as IT Support for university events and workshops</li>
+            <li>Participated in national and international programming competitions</li>
+            <li>Mentored junior students in HTML, CSS, JavaScript, and Python</li>
+            <li>Collaborated on open-source projects hosted on GitHub</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Bachelor of Science in Information Technology – University of Example (2022–Present)</li>
+            <li>High School Diploma – Example National High School (2018–2022)</li>
         </ul>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com/username">github.com/username</a></p>
+        <p>Email: <a href="brntgayamo134@gmail.com">brntgayamo134@gmail.com</a></p>
+        <p>Phone: +63 929 859 9025</p>
+        <p>GitHub: <a href="https://github.com/lalamove123">github.com/lalamove123</a></p>
     </section>
 
     <!-- Footer -->
     <footer>
-<!-- Games Footer with Full-Website Iframes -->
-<section class="games-footer">
-    <div class="game-frame">
-        <h3>Snake Game 🐍</h3>
-        <iframe src="snake.html" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="game-frame">
-        <h3>Fireworks Show 🎆</h3>
-        <iframe src="fireworks.html" frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
-        <p>&copy; 2026 Your Name | All Rights Reserved</p>
+        <!-- Games Footer with Full-Website Iframes -->
+        <section class="games-footer">
+            <div class="game-frame">
+                <h3>Snake Game 🐍</h3>
+                <iframe src="snake.html" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="game-frame">
+                <h3>Fireworks Show 🎆</h3>
+                <iframe src="fireworks.html" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <p>&copy; 2026 Brent Gayamo | All Rights Reserved</p>
         <p>
-            <a href="https://github.com/username">GitHub</a> |
-            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="https://github.com/lalamove123">GitHub</a> |
+            <a href="brntgayamo134@gmail.com">Email</a>
         </p>
     </footer>
 
