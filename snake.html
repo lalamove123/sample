@@ -9,23 +9,59 @@
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { display:flex; justify-content:center; align-items:center; min-height:100vh; font-family:'Inter', sans-serif; background:#0b0f19; color:#f5f5f5; padding:10px; }
+
+body {
+    display:flex; justify-content:center; align-items:center;
+    min-height:100vh; font-family:'Inter', sans-serif;
+    background:#0b0f19; color:#f5f5f5; padding:10px;
+}
+
 .game-container { text-align:center; max-width:100%; position:relative; }
-h1 { color:#60a5fa; margin-bottom:20px; font-size:2.5em; text-shadow:1px 1px 6px rgba(0,0,0,0.7);}
-.score-board { background: rgba(0,0,0,0.6); color:#60a5fa; padding:10px 20px; margin-bottom:10px; border-radius:12px; font-size:1.3em; font-weight:600; display:inline-block; box-shadow:0 4px 10px rgba(0,0,0,0.5);}
-canvas { background: #1f2937; border-radius:15px; border:4px solid #60a5fa; box-shadow:0 8px 20px rgba(0,0,0,0.6); max-width:100%; height:auto;}
+
+h1 {
+    color:#60a5fa; margin-bottom:20px; font-size:2.5em;
+    text-shadow:1px 1px 8px rgba(0,0,0,0.8);
+}
+
+.score-board {
+    background: linear-gradient(145deg, rgba(96,165,250,0.3), rgba(96,165,250,0.6));
+    color:#60a5fa; padding:12px 25px; margin-bottom:15px;
+    border-radius:15px; font-size:1.3em; font-weight:700;
+    display:inline-block; box-shadow:0 6px 15px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.score-board:hover { transform: scale(1.05); }
+
+canvas {
+    background: #1f2937;
+    border-radius:20px;
+    border:4px solid #60a5fa;
+    box-shadow:0 10px 25px rgba(0,0,0,0.6);
+    max-width:100%; height:auto;
+}
+
 .mobile-controls { 
     margin-top:20px; 
     display:grid; 
     grid-template-columns: 70px 70px 70px; 
     grid-template-rows: 70px 70px 70px; 
-    gap:10px; 
+    gap:12px; 
     justify-content:center; 
     align-items:center;
 }
-.control-btn { background: rgba(96,165,250,0.2); color:#60a5fa; border:2px solid #60a5fa; border-radius:50%; font-size:2em; font-weight:bold; cursor:pointer; transition: all 0.2s; display:flex; align-items:center; justify-content:center;}
-.control-btn:active { background:#60a5fa; color:#0b0f19; transform:scale(0.95);}
-.control-btn.center { background: rgba(0,0,0,0.5); border-color:#60a5fa; font-size:1em; cursor:default; display:flex; align-items:center; justify-content:center;}
+
+.control-btn { 
+    background: rgba(96,165,250,0.2); color:#60a5fa; 
+    border:2px solid #60a5fa; border-radius:50%; 
+    font-size:2em; font-weight:bold; cursor:pointer; 
+    transition: all 0.2s; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+.control-btn:active { background:#60a5fa; color:#0b0f19; transform:scale(0.95); }
+.control-btn.center { background: rgba(0,0,0,0.5); border-color:#60a5fa; font-size:1em; cursor:default; }
+
 @media (max-width:600px) { 
     h1{font-size:2em;} 
     canvas{width:100%; height:auto;} 
@@ -121,9 +157,8 @@ function update() {
         case 'RIGHT': head.x++; break;
     }
 
-    // Collision check
     if(head.x<0 || head.x>=GRID_WIDTH || head.y<0 || head.y>=GRID_HEIGHT || snake.some(s=>s.x===head.x && s.y===head.y)){
-        startGame(); // auto restart instead of game over
+        startGame(); // auto restart
         return;
     }
 
@@ -139,15 +174,29 @@ function update() {
 }
 
 function draw(){
+    // Background grid
     ctx.fillStyle = '#1f2937';
     ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.strokeStyle = '#111827';
+    for(let i=0;i<=GRID_WIDTH;i++){
+        ctx.beginPath(); ctx.moveTo(i*TILE_SIZE,0); ctx.lineTo(i*TILE_SIZE,canvas.height); ctx.stroke();
+    }
+    for(let j=0;j<=GRID_HEIGHT;j++){
+        ctx.beginPath(); ctx.moveTo(0,j*TILE_SIZE); ctx.lineTo(canvas.width,j*TILE_SIZE); ctx.stroke();
+    }
 
+    // Food
     ctx.fillStyle = 'red';
-    ctx.fillRect(food.x*TILE_SIZE, food.y*TILE_SIZE, TILE_SIZE, TILE_SIZE);
+    ctx.beginPath();
+    ctx.arc(food.x*TILE_SIZE+TILE_SIZE/2, food.y*TILE_SIZE+TILE_SIZE/2, TILE_SIZE/2-2, 0, Math.PI*2);
+    ctx.fill();
 
+    // Snake
     snake.forEach((s,i)=>{
-        ctx.fillStyle = i===0 ? 'lime' : 'green';
-        ctx.fillRect(s.x*TILE_SIZE, s.y*TILE_SIZE, TILE_SIZE, TILE_SIZE);
+        ctx.fillStyle = i===0 ? '#7CFC00' : '#32CD32';
+        ctx.beginPath();
+        ctx.arc(s.x*TILE_SIZE+TILE_SIZE/2, s.y*TILE_SIZE+TILE_SIZE/2, TILE_SIZE/2-1, 0, Math.PI*2);
+        ctx.fill();
     });
 }
 
